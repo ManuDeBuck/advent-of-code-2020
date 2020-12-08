@@ -64,7 +64,5 @@ async function solve2(filename, fnc) {
     return countRecursive2(hierarchDict, countDict, search);
 }
 
-
-
 solve("input", undefined).then(result => console.log(result));
 solve2("input", undefined).then(result => console.log(result));
