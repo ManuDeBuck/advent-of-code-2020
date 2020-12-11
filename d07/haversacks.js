@@ -27,7 +27,7 @@ function countRecursive(dict, start, search) {
         if (sub === search) {
             return true;
         } else {
-            if(countRecursive(dict, sub, search)) return true;
+            if (countRecursive(dict, sub, search)) return true;
         }
     }
     return false;
@@ -36,11 +36,11 @@ function countRecursive(dict, start, search) {
 async function solve(filename, fnc) {
     const input = await fs.readFileSync(filename).toString();
     const lines = input.split("\n");
-    const { hierarchDict, sups } = computeBagDict(lines);
+    const {hierarchDict, sups} = computeBagDict(lines);
     const search = "shiny gold"
     let count = 0;
     for (const sup of sups) {
-        if(countRecursive(hierarchDict, sup, search)) count += 1;
+        if (countRecursive(hierarchDict, sup, search)) count += 1;
     }
     return count;
 }
@@ -59,7 +59,7 @@ function countRecursive2(hDict, cDict, search) {
 async function solve2(filename, fnc) {
     const input = await fs.readFileSync(filename).toString();
     const lines = input.split("\n");
-    const { hierarchDict, countDict } = computeBagDict(lines);
+    const {hierarchDict, countDict} = computeBagDict(lines);
     const search = "shiny gold"
     return countRecursive2(hierarchDict, countDict, search);
 }

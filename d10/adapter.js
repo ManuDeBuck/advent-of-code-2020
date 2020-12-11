@@ -20,7 +20,7 @@ function possibilities(lines) {
     const max = Math.max(...sorted);
 
     const counts = [];
-    for(let i = 0; i < max; i += 1) counts.push(0);
+    for (let i = 0; i < max; i += 1) counts.push(0);
     counts[max - 1] = 1;
 
     for (let index = sorted.length - 2; index >= 0; index -= 1) {

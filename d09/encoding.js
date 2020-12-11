@@ -13,7 +13,7 @@ function doesSum(lastTf, sum) {
 function findCorruptedIns(lines) {
     for (let i = 25; i < lines.length; i += 1) {
         const previous = lines.slice(i - 25, i);
-        if (! doesSum(previous, lines[i])) {
+        if (!doesSum(previous, lines[i])) {
             return lines[i];
         }
     }
